@@ -109,6 +109,8 @@ public class SongLoader {
             selection = BASE_SELECTION;
         }
 
+        selection = selection + " AND " + AudioColumns.DATA + " LIKE " + "'%Phonograph%'";
+
         // Blacklist
         ArrayList<String> paths = BlacklistStore.getInstance(context).getPaths();
         if (!paths.isEmpty()) {
